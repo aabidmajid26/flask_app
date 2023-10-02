@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+{% block body %}
+{% if not cart_items%}
+    <h3>{{user_name}}, your cart is empty!</h3>
+{% else %}
+    <h3>{{user_name}}, your cart contains: </h3>
+    <ul>
+        {% for cart_item in cart_items %}
+            <li>{{ cart_item.item_name }} : {{cart_item.count}}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+<a href="/">Home</a>
+<a href="/logout">Log out</a>
+{% endblock %}

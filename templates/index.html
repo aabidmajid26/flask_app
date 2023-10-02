@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <h1>Hello, {{name}}!</h1>
+    <a href="/showcart" >Review Cart</a>
+
+    <table>
+        <tr>
+            <td>iPhone 15</td>
+            <td>
+                <form action="/addcart" method="post">
+                    <input name="name" hidden value="iPhone 15"/>
+                    <button type="submit">+</button>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>iPhone 15 Pro</td>
+            <td>
+                <form action="/addcart" method="post">
+                    <input name="name" hidden value="iPhone 15 Pro"/>
+                    <button type="submit">+</button>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>iPhone 14 Pro</td>
+            <td>
+                <form action="/addcart" method="post">
+                    <input name="name" hidden value="iPhone 14 Pro"/>
+                    <button type="submit">+</button>
+                </form>
+            </td>
+        </tr>
+    </table>
+    
+    <form action="/logout">
+        <button type="submit">Log Out</button>
+    </form>
+{%endblock %}
